@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>使用on/bind/one绑定事件</title>
+		<script src="js/jquery-3.2.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				//使用bind绑定事件
+				/*$("#box").bind("mouseleave",function(){
+					$(this).css("background-color","red");
+				});*/
+				//绑定多个事件
+				/*$("#box").bind({
+					//鼠标滑过事件
+					mouseenter:function(){
+						$("#box").css("background-color","#ADFF2F")
+					},
+					mouseleave:function(){
+						$(this).css("background-color","#0084FF");
+					}
+				})*/
+				//使用on绑定事件
+				/*$("#box").on("click",function(){
+					alert("修改背景色");
+				})*/
+				//绑定多个事件
+				/*$("#box").on({
+					"click":function(){
+						$(this).css("background-color","red");
+					},
+					"mouseleave":function(){
+						$(this).css("background-color","#008000");
+					}
+				})*/
+				//一次性事件，用完就没了
+				$("#box").one("click",function(){
+					alert("修改背景色");
+				})
+			})
+		</script>
+		<style type="text/css">
+			#box{
+				width: 100px;
+				height: 100px;
+				background-color: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			
+		</div>
+	</body>
+</html>

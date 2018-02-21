@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-3.2.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				//复杂json
+				var clas = {className:"YF1701",
+				students:[
+				{
+					stuname:"段佳鹏",sex:"男",age:18
+				},{
+					stuname:"段佳鹏",sex:"男",age:18
+				},{
+					stuname:"段佳",sex:"男",age:18
+				},{
+					stuname:"段",sex:"男",age:18
+				},{
+					stuname:"佳鹏",sex:"男",age:18
+				}],
+				jiGou:"中科陶瑞"}
+				//读取数据
+				document.write("班级名称:"+clas.className);
+				document.write("<br/>机构:"+clas.jiGou);
+				var stu = clas.students;
+				for(var i=0;i<stu.length;i++){
+					document.write("<br/>"+stu[i].stuname);
+				}
+			})
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

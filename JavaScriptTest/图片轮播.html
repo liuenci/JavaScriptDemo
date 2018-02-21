@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>图片轮播</title>
+		<script type="text/javascript">
+			var ph = 1;
+			function imglb(){
+				//获取图片标签
+				var img = document.getElementById("im");
+				//修改路径
+				img.src = "img/"+ph+".jpg";
+				ph++;
+				if(ph==4){
+					ph=1;
+				}
+			}
+			//启动计时器
+			var time = setInterval("imglb()","1000");
+			
+			//停止
+			function stop(){
+				clearInterval(time);
+			}
+		</script>
+	</head>
+	<body>
+		<label>图片轮播:</label><input type="button" value="停止" onclick="stop()">
+		<img src="img/1.jpg" id="im">
+	</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>获取元素标签体</title>
+		<script src="js/jquery-3.2.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			//对文档进行初始化操作
+			$(document).ready(function(){
+				//给按钮添加点击事件
+				//通过标签属性获取查看按钮
+				$("[value='查看']").click(function(){
+					//通过标签id获取div对象
+					var d = $("#d");
+					alert("html()方法:"+d.html());
+				});
+				
+				//给修改按钮添加点击事件
+				$("[value='修改']").click(function(){
+					//修改div的标签体
+					$("#d").html("<ul><li>列表1</li><li>列表2</li><li>列表3</li><li>列表4</li></ul>");
+				});
+			})
+		</script>
+	</head>
+	<body>
+		<div id="d">
+			<span>Jquery元素基本操作</span>
+		</div>
+		<input type="button" value="查看" />
+		<input type="button" value="修改" />
+	</body>
+</html>

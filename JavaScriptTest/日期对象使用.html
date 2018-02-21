@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>日期对象使用</title>
+		<script type="text/javascript">
+			function showtime(){
+				//获取系统时间
+				var d = new Date();
+				//获取日期和时间
+				//获取年
+				var year = d.getFullYear();
+				//获取月份
+				var month = d.getMonth();
+				//获取日
+				var date = d.getDate();
+				//获取小时
+				var hour = d.getHours();
+				//获取分钟
+				var minute = d.getMinutes();
+				//获取秒钟
+				var second = d.getSecondls();
+				
+				//将时间显示到sp中
+				var sp = document.getElementById("sp");
+				sp.innerText = year+"年"+month+"月"+date +"日"+hour+"时"+minute+"分"+second+"秒";
+			}
+			
+			var time = setInterval("showtime()","1000");
+		</script>
+	</head>
+	<body>
+		<input type="button" value="显示时间" onclick="showtime()">
+		<span id="sp"><span>
+	</body>
+</html>

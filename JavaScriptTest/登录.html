@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-3.2.1.js">
+		</script>
+		<script type="text/javascript">
+			$().ready(function() {
+				$(":input").focus(function() {
+					$(this).css("background-color", "red");
+				}).blur(function() {
+					$(this).css("background-color", "white");
+				});
+				//验证用户是否存在
+				$("#uname").blur(function() {
+					//获取文本框里的值
+					var value = $("#uname").val();
+					if(value == "") {
+						$("#uname~span:eq(0)").text("用户名不能为空").css({
+							"background-color": "red",
+							"font-size": "10px"
+						});
+					}
+				});
+				$("#upwd").blur(function() {
+					//获取文本框里的值
+					var value = $("#upwd").val();
+					if(value == "") {
+						$("#upwd~span:eq(0)").text("密码不能为空").css({
+							"background-color": "red",
+							"font-size": "10px"
+						});
+					}
+				})
+				$("#tel").blur(function () {
+					var value = $("#tel").val();
+					if(value == "") {
+						$("#tel~span:eq(0)").text("手机号不能为空").css({
+							"background-color": "red",
+							"font-size": "10px"
+						});
+					}
+				})
+				$(":button").hover(function(){
+					$(":button").css({
+						"background-color":"red",
+						"font-size":"10px"
+					})
+				});
+				//向上收缩
+				$("#outDiv").click(function(){
+					$("#outDiv").slideUp();
+				});
+				
+				
+			});
+			$(document).ready(function(){
+				$("ul li").hover(function(){
+					$(this).animate({marginLeft:"100px",color:"white"},"slow");
+				})
+			});
+		</script>
+		<style type="text/css">
+			#outDiv {
+				width: 300px;
+				height: 300px;
+				background-color: darkgoldenrod;
+			}
+			ul li{
+				cursor: pointer;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="outDiv">
+			<span>登录</span>
+			<br />
+			<span>用户名:</span>
+			<input type="text" placeholder="用户名/邮箱/手机号" id="uname"><span></span>
+			<br />
+			<span>密&nbsp;&nbsp;&nbsp;&nbsp;码:</span>
+			<input type="password" id="upwd"><span></span>
+			<br />
+			<span>手机号:</span>
+			<input type="text" id="tel"><span></span>
+			<br />
+			<input type="button" name="" id="" value="登录" />
+			<br /><br /><br />
+			<ul>
+				<li>主席小坏坏</li>
+				<li>主席小坏坏</li>
+				<li>主席小坏坏</li>
+				<li>主席小坏坏</li>
+				<li>主席小坏坏</li>
+			</ul>
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>淡入淡出</title>
+		<script src="js/jquery-3.2.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$().ready(function(){
+				$("[value='淡入']").click(function(){
+					//设置图片到淡入显示
+					$("img").fadeIn(5000);
+				});
+				$("[value='淡出']").click(function(){
+					//设置图片到淡入显示
+					$("img").fadeOut(5000);
+				});
+			})
+		</script>
+	</head>
+	<body>
+		
+		<img src="img/1.jpg" style="display: none;"/>
+		<input type="button" value="淡入">
+		<input type="button" value="淡出">
+	</body>
+</html>

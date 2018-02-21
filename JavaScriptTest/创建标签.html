@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>创建标签</title>
+		<script src="js/jquery-3.2.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$().ready(function(){
+				$("[value='创建标签']").click(function(){
+					//创建标签
+					var sp = $("<span style='color: wheat;'></span>").text("小松松");
+					sp.click(function(){
+						
+						//删除元素
+						sp.remove();
+					})
+					//追加子元素
+					var xm = $("#xm");
+//					xm.append(sp);
+					sp.appendTo(xm)
+				});
+			});
+			
+			/**
+			 * 删除按钮
+			 */
+			function del(d){
+				alert("删除"+$(d).html());
+				d.remove();
+			}
+			/**
+			 * 克隆按钮
+			 */
+			function colone(d){
+				var cld = $(d).clone();
+				$("#xm").append(cld);
+			}
+		</script>
+		<style type="text/css">
+			#xm{
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="xm"></div>
+		<input type="button" value="创建标签" />
+		<input type="button" value="删除"  onclick="del(this)"/>
+	</body>
+</html>

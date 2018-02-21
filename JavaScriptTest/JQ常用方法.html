@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-3.2.1.js"></script>
+		<script type="text/javascript">
+			//给文档进行初始化操作
+			$(document).ready(function(){
+				//给按钮添加点击事件
+				$("[value='修改']").click(function(){
+					//html方法
+					alert($("#d").html());
+					//text方法
+					alert($("#d").text());
+				});
+				//给修改按钮添加点击事件
+				$("[value='修改']").click(function(){
+					//修改div的标签体
+					$("#d").html("<ul><li>主席小坏坏</li><li>主席小坏坏</li><li>主席小坏坏</li></ul>");
+				});
+				/*$("[value='显示']").click(function(){
+					//获取div
+					var div = document.getElementById("red");
+					$(div).toggle(2000);
+				})*/
+				
+				
+				
+			});
+			$().ready(function(){
+				$("[value='淡入']").click(function(){
+					$("#a").fadeIn(1000);
+				});
+			});
+				
+		
+			function  login(){
+					var uname = $("[name='userName']").text();
+					var upwd = $("[name='userPassword']").text();
+					if(uname==nulls){
+						alert("用户名不能为空");
+					}else if(upwd==null){
+						alert("密码不能为空")
+					}else{
+						alert("登录成功");
+					}
+				}
+			function move(){
+				//获取div坐标
+				var div = $("#red").offset();
+				
+					
+				
+			/*	var top = div.top;
+				var left = div.left;*/
+				var num = 1;
+				if(top<500){
+					if(num==1){
+					var top = div.top+1;
+					var left = div.left+1;
+					$("#red").offset({top:top,left:left});
+					if(top>500){
+						num=2;
+					}
+				}
+				if(num==2){
+					var top = div.top-1;
+					var left = div.left-1;
+					$("#red").offset({top:top,left:left});
+				}
+				}
+				
+				
+			}
+			setInterval("move()",10);
+			
+		</script>
+		<style type="text/css">
+			#red{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="d"> 
+			<span>jquery基本操作</span>
+		</div>
+		<input type="text" value="修改">
+		<br />
+		<br /><br />
+		<div id="red">
+			
+		</div>
+		<input type="button" value="显示" onclick="move()">
+		<br />
+		用户名:<input type="text" name="userName">
+		密码:<input type="password" name="userPassword">
+		<input type="button" value="验证" onclick="login()">
+		<input type="button" value="淡入">
+		<input type="button" value="淡出">
+		<img src="img/1.jpg" id="a"/ >
+	</body>
+</html>

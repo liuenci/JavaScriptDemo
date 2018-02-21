@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-3.2.1.js">
+		</script>
+		<script type="text/javascript">
+			$().ready(function() {
+				$("#result").keyup(function() {
+					$("ul").show();
+				}).blur(function() {
+					$("ul").hide();
+				})
+			})
+		</script>
+		<style type="text/css">
+			#baidu {
+				width: 100%;
+				height: 700px;
+				background-repeat: no-repeat;
+				background-image: url(img/TIM截图20170830092637.png);
+			}
+			
+			#search {
+				width: 536px;
+				height: 35px;
+				background-color: #0084FF;
+				position: absolute;
+				top: 190px;
+				left: 362px;
+			}
+			
+			#result {
+				width: 536px;
+				height: 35px;
+				text-indent: 5px;
+				border: 1px solid #0084FF;
+			}
+			
+			ul {
+				list-style: none;
+				border: 1px solid #0084FF;
+				width: 536px;
+				border-top: 0px;
+				position: absolute;
+				top: 23px;
+				display: none;
+				padding: 0px;
+				text-indent: 10px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="baidu">
+			<div id="search">
+				<input type="text" name="result" id="result" value="" />
+				<ul>
+					<li>主席小坏坏</li>
+					<li>主席大坏坏</li>
+					<li>主席好坏坏</li>
+					<li>主席真坏坏</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>修改背景色</title>
+		<script type="text/javascript">
+			function changBgColor(td){
+				//获取单元格的背景色
+				var color = td.style.backgroundColor;
+				//设置body背景色
+				document.body.bgColor = color;
+			}
+		</script>
+	</head>
+	<body>
+		<table id="tb" width="200px" height="200px" border="1">
+			<tr id="tr1">
+				<td style="background-color: green;" onclick="changBgColor(this)"></td>
+				<td style="background-color:red;" onclick="changBgColor(this)"></td>
+				<td style="background-color:gold;" onclick="changBgColor(this)"></td>
+			</tr>
+			<tr>
+				<td style="background-color:blue;" onclick="changBgColor(this)"></td>
+				<td style="background-color:bisque;" onclick="changBgColor(this)"></td>
+				<td style="background-color:crimson;" onclick="changBgColor(this)"></td>
+			</tr>
+			<tr>
+				<td style="background-color: yellow;" onclick="changBgColor(this)"></td>
+				<td style="background-color:gold;" onclick="changBgColor(this)"></td>
+				<td style="background-color:burlywood;" onclick="changBgColor(this)"></td>
+			</tr>
+		</table>
+	</body>
+</html>

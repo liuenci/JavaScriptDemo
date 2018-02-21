@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>jishiqi</title>
+		<script type="text/javascript">
+			var time = 1;
+			var st;
+			//计时器
+			function jishiqi(){
+				//获取计时显示标签
+				var s = document.getElementById("js");
+				s.innerText=time;
+				time++;
+				//使用计时
+				st = setTimeout("jishiqi()","1000");
+			}
+			function stop(){
+				clearTimeout(st);
+			}
+		</script>
+	</head>
+	<body>
+		计时器：<span id="js">0</span>
+		<input type="button" name="" id="" value="开始" onclick="jishiqi()"/>
+		<input type="button" name="" id="" value="清除" onclick="stop()"/>
+	</body>
+</html>

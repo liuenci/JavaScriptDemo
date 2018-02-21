@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>广告弹窗</title>
+		<script src="js/jquery-3.2.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$().ready(function(){
+				$("#move").ready(function(){
+					//获取div坐标
+					var d = $("#move").offset();
+					
+					var top = d.top+5;
+					var left = d.left+5;
+					
+					$("#move").offset({top:top,left:left})
+				});
+			});
+			/**
+			 * 使用定时器调用
+			 */
+			function move(){
+				//获取div坐标
+				var d = $("#move").offset();
+				
+				var top=d.top+1;    //纵坐标+5
+				var left = d.left+1; //横坐标+5
+				//重新设置div的位置
+				$("#move").offset({top:top,left:left});					
+			}
+			
+			setInterval("move()","1");
+		</script>
+		<style type="text/css">
+			#move{
+				width: 100px;
+				height: 100px;
+				background-color: greenyellow;
+				position: relative;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="move">
+			我是一个小广告，不要关！
+		</div>
+		<input type="button"  value="移动" />
+	</body>
+</html>

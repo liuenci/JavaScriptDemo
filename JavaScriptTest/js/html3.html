@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-3.2.1.js"></script>
+		<script type="text/javascript">
+			function updateColor(){
+//				var div = document.getElementById("divColor");
+//				div.style.backgroundColor="gold";
+				var div = $("#divColor");
+				div.css("background-color","bisque");
+				$("div:hidden").show();
+				var span = $(".spanColor");
+				span.css("font-size","10px");
+				$("div>span").css("font-size","30px");
+				
+				var table = $("#table");
+				table.css("font-weight","bold");
+				table.css("background-color","#008000");
+				$("table>tbody>tr:even").css("background-color","red");
+				$("table>tbody>tr:odd").css("background-color","green");
+				$("table>tbody>tr>td:odd").html("主席大坏坏");
+				$("table>tbody>tr>td:contains(小)").css("background-color","gold");
+			}
+			
+		</script>
+		<style type="text/css">
+			#divColor{
+				width: 100px;
+				height: 100px;
+				background-color: green;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="divColor">
+			
+			<span class="spanColor">主席小坏坏</span>
+		</div>
+		<table border="1" id="table">
+			<tr>
+				<td>主席小坏坏</td>
+				<td>主席小坏坏</td>
+				<td>主席小坏坏</td>
+				<td>主席小坏坏</td>
+				<td>主席小坏坏</td>
+				<td>主席小坏坏</td>
+			</tr>
+			<tr>
+				<td>主席小坏坏</td>
+				<td>主席小坏坏</td>
+				<td>主席小坏坏</td>
+				<td>主席小坏坏</td>
+				<td>主席小坏坏</td>
+				<td>主席小坏坏</td>
+			</tr>
+			<tr>
+				<td>主席小坏坏</td>
+				<td>主席小坏坏</td>
+				<td>主席小坏坏</td>
+				<td>主席小坏坏</td>
+				<td>主席小坏坏</td>
+				<td>主席小坏坏</td>
+			</tr>
+			<tr>
+				<td>主席小坏坏</td>
+				<td>主席小坏坏</td>
+				<td>主席小坏坏</td>
+				<td>主席小坏坏</td>
+				<td>主席小坏坏</td>
+				<td>主席小坏坏</td>
+			</tr>
+			<tr>
+				<td>主席小坏坏</td>
+				<td>主席小坏坏</td>
+				<td>主席小坏坏</td>
+				<td>主席小坏坏</td>
+				<td>主席小坏坏</td>
+				<td>主席小坏坏</td>
+			</tr>
+			<tr>
+				<td>主席小坏坏</td>
+				<td>主席小坏坏</td>
+				<td>主席小坏坏</td>
+				<td>主席小坏坏</td>
+				<td>主席小坏坏</td>
+				<td>主席小坏坏</td>
+			</tr>
+			<tr>
+				<td>主席小坏坏</td>
+				<td>主席小坏坏</td>
+				<td>主席小坏坏</td>
+				<td>主席小坏坏</td>
+				<td>主席小坏坏</td>
+				<td>主席小坏坏</td>
+			</tr>
+			<tr>
+				<td>主席小坏坏</td>
+				<td>主席小坏坏</td>
+				<td>主席小坏坏</td>
+				<td>主席小坏坏</td>
+				<td>主席小坏坏</td>
+				<td>主席小坏坏</td>
+			</tr>
+			<tr>
+				<td>主席小坏坏</td>
+				<td>主席小坏坏</td>
+				<td>主席小坏坏</td>
+				<td>主席小坏坏</td>
+				<td>主席小坏坏</td>
+				<td>主席小坏坏</td>
+			</tr>
+			<tr>
+				<td>主席小坏坏</td>
+				<td>主席小坏坏</td>
+				<td>主席小坏坏</td>
+				<td>主席小坏坏</td>
+				<td>主席小坏坏</td>
+				<td>主席小坏坏</td>
+			</tr>
+			
+			
+			
+		</table>
+		<input type="button" value="修改背景色" onclick="updateColor()">
+		<input type="button" value="显示">
+	</body>
+</html>

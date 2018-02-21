@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-3.2.1.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("[value='创建div']").click(function(){
+					//创建div
+					var span = $("<span  style='color: red;'>").text("主席");
+					span.click(function(){
+//						span.remove();
+						
+						
+					});
+					$("div").append(span);
+				});
+				
+			});
+			function colone(){
+				//克隆
+				var a  = $("[value='创建div']").clone();
+				$("div").append(a);
+			}
+		</script>
+	</head>
+	<body>
+		<div>
+			
+		</div>
+		<input type="button" value="创建div" onclick="colone()">
+	</body>
+</html>

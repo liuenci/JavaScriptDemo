@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>显示和隐藏</title>
+		<script src="js/jquery-3.2.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$().ready(function(){
+				//给按钮添加点击事件
+				$("#sh").click(function(){
+					//根据id获取元素对象
+					var d = document.getElementById("box");
+					//将dom对象转换为jquery对象
+					$(d).toggle(2000);
+				})
+			})
+		</script>
+		<style type="text/css">
+			.set{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box" class="set"></div>
+		<input id="sh" type="button" value="显示/隐藏div" />
+	</body>
+</html>

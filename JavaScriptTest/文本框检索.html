@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-3.2.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$().ready(function(){
+				$("#result").keydown(function(){
+					$("ul").show();
+				}).blur(function(){
+					$("ul").hide();
+				})
+			});
+		</script>
+		<style type="text/css">
+			#search{
+				position: relative;
+				margin: 50px;
+			}
+			#result{
+				width: 200px;
+				height: 25px;
+				text-indent: 5px;
+				border: 1px solid deepskyblue;
+			}
+			ul{
+				list-style: none;
+				border: 1px solid deepskyblue;
+				border-top: none;
+				width: 200px;
+				position: absolute;
+				top:28px;
+				padding:0px;
+				margin:0px;
+				display: none;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="search">
+			<input id="result"/>
+			<ul>
+				<li>123123123</li>
+				<li>123123123</li>
+				<li>123123123</li>
+				<li>123123123</li>
+				<li>123123123</li>
+			</ul>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>创建元素</title>
+		<script type="text/javascript">
+			/**
+			 * 创建按钮
+			 */
+			function addButton(){
+				//创建按钮
+				var btn = document.createElement("button");
+				//给按钮添加内容
+				btn.innerText =　"新按钮";
+				//将按钮添加到页面中
+				document.body.appendChild(btn);
+			}
+			/**
+			 * 创建表格
+			 */
+			function addTable(){
+				//创建table元素
+				var table = document.createElement("table");
+				//设置表格边框
+				table.setAttribute("border","1");
+				//设置id属性
+				table.setAttribute("id","table1");
+				//设置表格点击事件
+				table.setAttribute("onclick","delTable(this)");
+				
+				for(var i=0;i<3;i++){
+					//创建tr元素
+					var tr = document.createElement("tr");
+					for(var j=0;j<3;j++){
+						var td = document.createElement("td");
+						td.innerText = "表格"+i;
+						//将td添加到table
+						tr.appendChild(td);
+					}
+					//将tr添加到table中
+					table.appendChild(tr);
+				}
+				//将table添加到body
+				document.body.appendChild(table);
+			}
+			
+			/**
+			 * 删除表格
+			 */
+			function delTable(tb){
+				document.body.removeChild(tb);
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" value="创建按钮" onclick="addButton()" />
+		<input type="button" value="创建表格" onclick="addTable()" />
+		<input type="button" value="删除表格" onclick="delTable()" />
+	</body>
+</html>

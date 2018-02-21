@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-3.2.1.js"></script>
+		<script type="text/javascript">
+			function a(){
+				$("table>tbody>tr:even").css("background-color","red");
+			}
+			function b(){
+				$("table>tbody>tr:not(:nth-child(2))").css("background-color","red");
+			}
+			function c(){
+				$("table>tbody>tr:odd").css("background-color","red");
+			}
+		</script>>
+	</head>
+	<body>
+		<table id="t" border="1" width="50%"> 
+  <tr> 
+    <td>韬睿科技</td> 
+    <td>韬睿科技</td> 
+    <td>韬睿科技</td> 
+    <td>韬睿科技</td> 
+  </tr> 
+  <tr> 
+    <td>韬睿科技</td> 
+    <td>韬睿科技</td> 
+    <td>韬睿科技</td> 
+    <td>韬睿科技</td> 
+  </tr> 
+  <tr> 
+    <td>韬睿科技</td> 
+    <td>韬睿科技</td> 
+    <td>韬睿科技</td> 
+    <td>韬睿科技</td> 
+  </tr> 
+  <tr> 
+    <td>韬睿科技</td> 
+    <td>韬睿科技</td> 
+    <td>韬睿科技</td> 
+    <td>韬睿科技</td> 
+  </tr> 
+  </table> 
+  <input type="button" value="偶数行变红色" onclick="a()">
+  <br/>
+  <input type="button" value="除了第2行其他行的背景变成红色 " onclick="b()">
+  <br/>
+  <input type="button" value="将第1行和第3行的背景变成红色" onclick="c()">
+	</body>
+</html>

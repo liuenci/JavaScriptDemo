@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>删除</title>
+		<style type="text/css">
+			.bg{
+				width: 100px;
+				height: 100px;
+				background: greenyellow;
+				border: 1px solid gray;
+			}
+			#close{
+				width: 100px;
+				height: 20px;
+				background: red;
+				color: white;
+				font-size:14px ;
+				text-align: right;
+				cursor: pointer;
+			}
+		</style>
+		<script type="text/javascript">
+			/**
+			 * 删除元素
+			 */
+			function removeEle(){
+				//获取要删除的元素
+				var div = document.getElementById("d");
+				document.body.removeChild(div);
+			}
+		</script>
+	</head>
+	<body>
+		<div id="d" class="bg">
+			<div id="close">
+				<span id="" onclick="removeEle()">
+					x&nbsp;
+				</span>
+			</div>
+		</div>
+	</body>
+</html>

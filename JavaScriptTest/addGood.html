@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function addGood() {
+				//获取table对象
+				var table = document.getElementById("table");
+				var tr = document.createElement("tr");
+				var goodName = document.getElementById("goodName").value;
+				var goodType = document.getElementById("goodType").value;
+				var goodPrice = document.getElementById("goodPrice").value;
+				var goodNum = document.getElementById("goodNum").value;
+				for(var i = 0; i < 7; i++) {
+					var td = document.createElement("td");
+					if(i == 0) {
+						//var inp = document.createElement("input");
+						//inp.type = "checkbox";
+						//inp.name = "select";
+						//td.appendChild(inp);
+						
+						td.innerHTML='<input type="checkbox" name="select">';
+					} else if(i == 1) {
+						td.innerText = goodName;
+					} else if(i == 2) {
+						td.innerText =goodType;
+					}else if(i==3){
+						td.innerText=goodPrice;
+					}else if(i==4){
+						td.innerText=goodNum
+					}else if(i==5){
+						td.innerText = goodNum*goodPrice;
+					}else if(i==6){
+						td.innerText="删除";
+					}
+					tr.appendChild(td);
+				}
+				table.appendChild(tr);
+			}
+			
+			/**
+			 * 全选
+			 */
+			function select_all(){
+				var select_all = document.getElementsByName("select");
+				for(var i=0;i<select_all.length;i++){
+					select_all[i].checked="checked";
+				}
+			}
+			/**
+			 * 反选
+			 */
+			function select_contrary(){
+				var select_all = document.getElementsByName("select");
+				for(var i=0;i<select_all.length;i++){
+					select_all[i].checked=!"checked";
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		商品名称:<input id="goodName" />
+		<select id="goodType">
+			<option>零食</option>
+			<option>酒水</option>
+			<option>辣条</option>
+		</select>
+		<br/> 商品价格:
+		<input id="goodPrice" /><input id="addGood" type="button" value="添加商品" onclick="addGood(1)"/>
+		<br/> 数量:
+		<input id="goodNum">单价:<input id="goodPurPrice" />
+		<table border="1" id="table">
+			<tr>
+				<td><span id="select_all" onclick="select_all()">全选</span>/
+					<span id="select_contrary" onclick="select_contrary()">反选</span></td>
+				<td>商品名</td>
+				<td>商品类别</td>
+				<td>单价</td>
+				<td>数量</td>
+				<td>小计</td>
+				<td>操作</td>
+			</tr>
+		</table>
+		总计:33
+	</body>
+
+</html>

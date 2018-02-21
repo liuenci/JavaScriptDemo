@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>hover、trigger使用</title>
+		<script src="js/jquery-3.2.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				//hover使用
+				$("#box").hover(function(){
+					$(this).css("background-color","green");
+				},function(){
+					$(this).css("background-color","red");
+				}).click(function(){
+					$(this).slideUp("slow");
+				})
+				
+				//给按钮添加自定义事件
+				$("#zdy").click(function(a,b,c,d){
+					$("#zdy").on("btn",function(a,r,ty,y){
+						alert(r+ty+y);
+					});
+					//触发自定义事件
+					$("#zdy").trigger("btn",["我","是","帅歌"]);
+				})
+			})
+		</script>
+		<style type="text/css">
+			#box{
+				width: 100px;
+				height: 100px;
+				background-color: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			
+		</div>
+		
+		<input id="zdy" type="button" value="自定义事件" />
+	</body>
+</html>

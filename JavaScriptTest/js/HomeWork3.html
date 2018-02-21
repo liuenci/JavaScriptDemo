@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-3.2.1.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				/*
+				 * ancestor descendant 
+    			*	prev + next 
+    			*	:header 
+    			*	:has(selector) 
+    			*	[attribute^=value] 
+    			*	:checkbox 
+    			*	:checked
+				 */
+				//ancestor descendant 
+				$("table tr td").html("囡囡");
+				//prev + next 
+				$("p").prev(".selected");
+				$("p").next(".selected");
+				//:header 
+				$(":header").css("background-color","red");
+				//:has(selector) 
+			$("div:has(table)").addClass("test");
+			//[attribute^=value] 
+			$("input[value^=nannan]").css("background-color","#008000");
+			//:checkbox checked
+			$(":checkbox").attr("checked","checked");
+			
+			
+			
+			})
+		</script>
+	</head>
+	<body>
+		<table border="1">
+			<tr>
+				<td>楠楠</td>
+				<td>楠楠</td>
+				<td>楠楠</td>
+				<td>楠楠</td>
+			</tr>
+		</table>
+		<input type="text" value="nannan">
+		<input type="checkbox">
+		<input type="checkbox">
+		<h1>Header 1</h1>
+<p>Contents 1</p>
+<h2>Header 2</h2>
+<p>Contents 2</p>
+		<div><span>Hello</span></div><p class="selected">Hello Again</p><p>And Again</p>
+	</body>
+</html>

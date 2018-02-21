@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-3.2.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/citys.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/sf.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				//初始化省份信息
+				for(var i = 0; i < sf.length; i++) {
+					//创建省份选项标签
+					var op = $("<option>");
+					//设置标签value
+					op.val(sf[i].ProID);
+					//设置标签显示内容
+					op.text(sf[i].name);
+
+					//给省份下拉列表添加子元素
+					$("#sf").append(op);
+				}
+				
+				//给省份下拉列表
+			$("#sf").change(function() {
+				//获取省份的编号
+				var pid = $(this).val();
+				//清空
+				$("#city").empty();
+				//遍历城市JSON找到省份对应的城市
+				for(var i = 0; i < cities.length; i++) {
+					//判断身份对应的城市
+					if(cities[i].ProID == pid) {
+						//创建城市选项
+						var cop = $("<option>");
+						//赋值
+						cop.val(cities[i].CityID);
+						cop.text(cities[i].name);
+						$("#city").append(cop);
+						$("#show").show();
+					}
+				}
+			})
+
+			})
+
+			
+		</script>
+		<style type="text/css">
+			#show {
+				display: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<label>省份：</label>
+		<select id="sf"></select>
+		<div id="show">
+			<label>城市：</label>
+			<select id="city"></select>
+		</div>
+
+	</body>
+
+</html>

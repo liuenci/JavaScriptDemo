@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				setInterval("yi()", "8");
+			});
+
+			var t = 0;
+			var l = 0;
+
+			function yi() {
+				var aa = $("#a");
+				var a = aa.offset();
+				if(a.top == 150) {
+					t = 1;
+				}
+				if(a.top == 9) {
+					t = 0;
+				}
+				if(a.left == 305) {
+					l = 1;
+				}
+				if(a.left == 9) {
+					l = 0;
+				}
+				if(t == 0 && l == 0) {
+					var top = a.top + 1;
+					var left = a.left + 1;
+					aa.offset({ top: top, left: left });
+				}
+				if(t == 1 && l == 0) {
+					var top = a.top - 1;
+					var left = a.left + 1;
+					aa.offset({ top: top, left: left });
+				}
+				if(t == 1 && l == 1) {
+					var top = a.top - 1;
+					var left = a.left - 1;
+					aa.offset({ top: top, left: left });
+				}
+				if(t == 0 && l == 1) {
+					var top = a.top + 1;
+					var left = a.left - 1;
+					aa.offset({ top: top, left: left });
+				}
+			}
+		</script>
+		<style type="text/css">
+			.d {
+				width: 10px;
+				height: 10px;
+				background-color: red;
+			}
+			
+			.f {
+				width: 310px;
+				height: 5px;
+				margin-top: 142px;
+				margin-left: 0px;
+				background-color: red;
+			}
+			
+			.v {
+				margin: 0px;
+				width: 309px;
+				height: 157px;
+				border: solid 1px red;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="v">
+			<div id="a" class="d"></div>
+			<div class="f"></div>
+		</div>
+	</body>
+
+</html>

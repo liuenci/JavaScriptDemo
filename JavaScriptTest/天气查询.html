@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>天气查询</title>
+		<script src="js/jquery-3.2.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/city.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			/*$(function(){
+				//初始化城市信息
+				for(var i=0;i<cities.length;i++){
+					var cop = $("<option>");
+					cop.val(cities[i].areaid);
+					cop.text(cities[i].countyname);
+					$("#ct").append(cop);
+				}
+				
+				//获取城市天气
+				$("#ct").change(function(){
+					//获取城市id
+					var cid = $(this).val();
+					//获取城市天气信息
+					$.getJSON("http://aider.meizu.com/app/weather/listRealtime",{"cityIds":cid},function(e){
+						//将JSON转换为字符串
+						var w = e.value;
+						$("#sp1").text(w[0].cityName);
+						$("#sp2").text(w[0].temp);
+						$("#sp3").text(w[0].weather);
+						$("#sp3").text(w[0].time);
+					})
+				})
+			})*/
+			$(function(){
+				//初始化城市信息
+				for(var i=0;i<cities.length;i++){
+					//创建城市选项
+					var op =$("<option>");
+					op.val(cities[i].areaid);
+					op.text(cities[i].countyname);
+					//给城市下拉列表追加元素
+					$("#ct").append(op);
+				}
+				
+				//获取城市天气
+				$("#ct").change(function(){
+					//获取城市id
+					var cid = $(this).val();
+					//获取城市天气信息
+					$.getJSON("http://aider.meizu.com/app/weather/listRealtime",
+							{"cityIds":cid},
+							function(e){
+								//把JSON转为字符串
+								//alert(JSON.stringify(e));
+								var w = e.value;
+								$("#sp1").text(w[0].cityName);
+								$("#sp2").text(w[0].temp);								
+								$("#sp3").text(w[0].weather);
+								$("#sp4").text(w[0].time);
+							});
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<label>请选择城市：</label>
+			<select id="ct"></select>
+			<h3>天气信息</h3>
+			城市：<span id="sp1"></span><br/>
+			温度：<span id="sp2"></span><br />
+			天气：<span id="sp3"></span><br />
+			日期：<span id="sp4"></span>
+	</body>
+</html>

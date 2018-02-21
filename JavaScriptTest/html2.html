@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function change() {
+				var btn = document.getElementById("btn");
+			}
+
+			function changeBgColor() {
+				//获得单元格颜色
+				var color = td.style.backgroundColor;
+				//设置body的颜色
+				document.body.bgColor = color;
+			}
+
+			function list() {
+				//省份数组
+				var sheng = new Array("湖南", "湖北");
+				//城市数组
+				var city1 = new Array("长沙", "株洲");
+				var city2 = new Array("武汉", "武昌");
+				var city3 = new Array("北京", "天津");
+				//得到省份的值
+				var shengValue = document.getElementById("sheng1").value;
+
+				var city = document.getElementById("city");
+				//清楚元素内容
+					city.innerText = "";
+				//创建元素
+				
+				//获得索引
+				var index = document.getElementById("sheng1").selectedIndex;
+					if(index==0){
+						for(var i = 0; i < city1.length; i++) {
+							var op = document.createElement("option");
+							op.value = city1[i];
+							op.innerHTML = city1[i];
+							city.appendChild(op);
+						}
+					}else if(index ==1){
+						for(var i = 0; i < city2.length; i++) {
+							var op = document.createElement("option");
+							op.value = city2[i];
+							op.innerHTML = city2[i];
+							city.appendChild(op);
+						}
+					}else if(index==2){
+						for(var i = 0; i < city3.length; i++) {
+							var op = document.createElement("option");
+							op.value = city3[i];
+							op.innerHTML = city3[i];
+							city.appendChild(op);
+						}
+					}
+				}
+				
+			
+		</script>
+	</head>
+
+	<body>
+		<input type="button" value="修改背景色" id="btn" onclick="change()" />
+		<div>修改背景色</div>
+		<br/> 省份:
+		<select id="sheng1" onchange="list()">
+			<option>湖南</option>
+			<option>湖北</option>
+			<option>湖西</option>
+		</select>
+		城市
+		<select id="city">
+			<option>株洲</option>
+			<option>长沙</option>
+		</select>
+	</body>
+
+</html>

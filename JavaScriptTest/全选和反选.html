@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>全选和反选</title>
+		<script type="text/javascript">
+			/**
+			 * 全选
+			 */
+			function ckChecked(){
+				//找到所有的复选框
+				var ck = document.getElementsByName("aihao");
+				//循环修改所有的复选框状态
+				for(var i=0;i<ck.length;i++){
+					ck[i].checked="checked";
+				}
+			}
+			/**
+			 * 反选
+			 */
+			function ckChecked1(){
+				//找到所有的复选框
+				var ck = document.getElementsByName("aihao");
+				//循环修改所有复选框状态
+				for(var i=0;i<ck.length;i++){
+					ck[i].checked = !ck[i].checked;
+				}
+			}
+		</script>
+		
+	</head>
+	<body>
+		<input type="button" value="全选" onclick="ckChecked()" />
+		<input type="button" value="反选" onclick="ckChecked1()" />
+		
+		<br />
+		爱好：
+		<input type="checkbox" name="aihao" value="1" />睡觉
+		<input type="checkbox" name="aihao" value="2" />王者
+		<input type="checkbox" name="aihao" value="3" />玩手机
+		<input type="checkbox" name="aihao" value="4" />上网
+	</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>自定义动画</title>
+		<script src="js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.animate-colors.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				//给每一个li写hover事件
+				$("ul li").hover(function(){
+					//定义一个动画
+					$(this).animate({marginLeft:"100px",color:"white",fontSize:"24px"},"fast");
+				},function(){
+					$(this).animate({marginLeft:"0px",color:"white",fontSize:"12px",backgroundColor: "blue"},"fast");
+				})
+			})
+		</script>
+		<style type="text/css">
+			ul{
+				list-style: none;				
+				padding: 0px;
+				margin: 0px;
+				font: 18px;
+			}
+			ul li{
+				cursor: pointer;
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>列表1</li>
+			<li>列表2</li>
+			<li>列表3</li>
+			<li>列表4</li>
+			<li>列表5</li>
+			<li>列表6</li>
+		</ul>
+	</body>
+</html>

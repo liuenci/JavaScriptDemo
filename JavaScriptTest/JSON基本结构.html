@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>JSON基本结构</title>
+		<script src="js/jquery-3.2.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			//JSON格式
+			//格式1
+			var stu = {
+				"name": "江明",
+				"sex": "男",
+				"age": 18
+			};
+			//			alert(stu.name+"　"+stu.sex+" "+stu.age);
+			//格式2
+			var stus = [{
+				"name": "江明",
+				"sex": "男",
+				"age": 18
+			}, {
+				"name": "江明1",
+				"sex": "男",
+				"age": 18
+			}, {
+				"name": "江明2",
+				"sex": "男",
+				"age": 18
+			}];
+			//输出数据
+			/*document.write("姓名：" + stus[0].name);
+			document.write("<br/>姓名：" + stus[1].name);
+			document.write("<br/>姓名：" + stus[2].name);*/
+
+			/**
+			 * 字符串转json对象
+			 * 注意：
+			 * 1.字符串的内容以一定要是正确的JSON格式
+			 * 2.转换是eval需要加小括号"()",表示强制执行括号里面的内容
+			 */
+			var st = "{name: '江明',	sex: '男',age: 18}";
+			var start = eval("(" + st + ")");
+			document.write(start.name);
+		</script>
+	</head>
+
+	<body>
+	</body>
+
+</html>

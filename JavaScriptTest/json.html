@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-3.2.1.js">
+		</script>
+		<script type="text/javascript" src="js/city.js"></script>
+		<script type="text/javascript" src="js/citys.js"></script>
+		<script type="text/javascript" src="js/sf.js"></script>
+		<script type="text/javascript">
+			//			var stu={"name":"江明","sex":"男","age":"18"};
+			//			//格式化数组
+			//			var stus = [{"name":"江明","sex":"男","age":18},{"name":"江明","sex":"男","age":18},{"name":"江明","sex":"男","age":18}];
+			//			alert(stus[1].name+" "+stus[1].sex+" "+stus[1].age);
+
+			//				var clas = {className:"yf1701",students:[
+			//				{stuname:"松哥一号",sex:"女",age:18},
+			//				{stuname:"松哥一号",sex:"女",age:18},
+			//				{stuname:"松哥一号",sex:"女",age:18}
+			//				],
+			//				JiGou:"中科陶瑞"};
+			//				//读取数据
+			//				document.write("班级名称："+clas.className);
+			//				document.write("<br/>机构:"+clas.JiGou);
+			//				//读取学生
+			//				var stu = clas.students;
+			//				for(var i=0;i<stu.length;i++){
+			//					document.write("<br/>姓名:"+stu[i].stuname+" 性别:"+stu[i].sex+" 年龄:"+stu[i].age);
+			//				}
+			//				var stu= {
+			//					name:"松哥",
+			//					sex:"男",
+			//					interest:function(){
+			//						document.write("吃饭");
+			//					}
+			//					
+			//				};
+			//				document.write(stu.name);
+			//				//调用方法
+			//				stu.interest();
+			//				//新增属性
+			//				stu.tel = "123456789";
+			//				document.write(stu.tel);
+			//				//遍历
+			//				for(var i in stu){
+			//					document.write("<br />"+stu[i]);
+			//				}
+			$(function() {
+				//初始化省份信息
+				for(var i = 0; i < sf.length; i++) {
+					var op = $("<option>");
+					op.val(sf[i].ProID);
+					op.text(sf[i].name);
+					$("#sf").append(op);
+				}
+				//给下拉列表绑定事件
+				$("#sf").change(function() {
+					var pid = $(this).val();
+					$("#city").empty();
+					for(var i = 0; i < cities.length; i++) {
+						if(cities[i].ProID == pid) {
+							var cop = $("<option>");
+							cop.val(cities[i].CityID);
+							cop.text(cities[i].name);
+							$("#city").append(cop);
+						}
+					}
+				})
+			})
+		</script>
+	</head>
+
+	<body>
+		<span>省份:</span>
+		<select id="sf">
+		</select>
+		<span>城市:</span>
+		<select id="city">
+		</select>
+	</body>
+
+</html>

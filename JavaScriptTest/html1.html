@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript">
+			//			function date(){
+			//				var date = new Date();
+			//				var year = date.getFullYear();
+			//				var month = date.getMonth()+1;
+			//				var day = date.getDate();
+			//				var hour = date.getHours();
+			//				var minute = date.getMinutes();
+			//				var seconds = date.getSeconds();
+			//				
+			//				var sp = document.getElementById("sj");
+			//				sp.innerText =year+"年"+month+"月"+day+"日"+hour+"时"+minute+"分"+seconds+"秒";
+			//				
+			//			}
+			//			var time = setInterval("date()",1000);
+			function addTable() {
+				//创建table元素
+				var table = document.createElement("table");
+				table.border = 1;
+
+				
+				for(var i = 0; i < 3; i++) {
+					//创建tr元素
+					var tr = document.createElement("tr");
+					for(var j = 0; j < 2; j++) {
+						//创建td元素
+						var td = document.createElement("td");
+						td.innerText = 　"主席小坏坏";
+						tr.appendChild(td);
+					}
+					table.appendChild(tr);
+				}
+				
+				
+				document.body.appendChild(table);
+			}
+			function removeTable(){
+				var table = document.getElementById("table1");
+				document.body.removeChild(table);
+			}
+		</script>>
+		<title></title>
+	</head>
+
+	<body>
+		<!--、<span id="sj">显示时间</span>-->
+		<input type="button" value="新增一行" onclick="addTable()">
+		<input type="button" value="删除一行" onclick="removeTable()">
+		<table id = "table1" border="1"> 
+			<tr>
+				<td>南南小坏坏</td>
+				<td>南南小坏坏</td>
+				<td>南南小坏坏</td>
+				<td>南南小坏坏</td>
+				<td>南南小坏坏</td>
+			</tr>
+			<tr>
+				<td>南南小坏坏</td>
+				<td>南南小坏坏</td>
+				<td>南南小坏坏</td>
+				<td>南南小坏坏</td>
+				<td>南南小坏坏</td>
+			</tr>
+			<tr>
+				<td>南南小坏坏</td>
+				<td>南南小坏坏</td>
+				<td>南南小坏坏</td>
+				<td>南南小坏坏</td>
+				<td>南南小坏坏</td>
+			</tr>
+		</table>>
+	</body>
+
+</html>

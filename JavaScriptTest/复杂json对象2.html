@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-3.2.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				//定义一个json对象
+				var stu = {
+					name:"刘松",
+				age:15,
+				sex:"男",
+				aihao:function(){
+					document.write("爱好:跑路");
+				},
+				eat:function(){
+					document.write("福建烤老鼠");
+				}}
+				//读取json对象
+				document.write("姓名:"+stu.name);
+				//调用方法
+				stu.aihao();
+				stu.eat();
+				
+				//新增属性
+				stu.tel = "11111";
+				document.write(stu.tel);
+				//遍历所有属性
+				for(var i in stu){
+					document.write("<br/>"+stu[i]);
+				}
+			})
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

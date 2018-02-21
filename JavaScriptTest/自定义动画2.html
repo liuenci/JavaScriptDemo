@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>自定义动画2</title>
+		<style type="text/css">
+			#box {
+				width: 100px;
+				height: 100px;
+				border:1px solid blue;
+				background-color: greenyellow;
+				font-size: 8px;
+				color:white;
+			}
+		</style>
+		<script src="js/jquery-3.2.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$().ready(function(){
+				//给div添加点击事件
+				$("#box").click(function(){
+					$(this).animate({
+						fontSize:"36px",
+						marginLeft:"300px",
+						borderRadius:"20px"
+					},3000).animate({
+						fontSize:"8px",
+						marginLeft:"8px",
+						borderRadius:"0px"
+					},3000).animate({
+						fontSize:"36px",
+						marginLeft:"300px",
+						borderRadius:"20px"
+					},3000).animate({
+						fontSize:"8px",
+						marginLeft:"8px",
+						borderRadius:"0px"
+					},3000);
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<div id="box">
+				韬睿
+		</div>
+	</body>
+</html>

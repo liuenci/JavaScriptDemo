@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>定位标签元素</title>
+		<script type="text/javascript">
+			/**
+			 * 根据id获取标签元素
+			 * 如果标签元素id相同，找到的是id对应的第一个标签
+			 */
+			function getTag(){
+				var sp = document.getElementById("2");
+				alert(sp.innerHTML);
+			}
+			/**
+			 * 根据标签name属性查找元素
+			 */
+			function getTagByName(){
+				var sp = document.getElementsByName("sp");
+				alert(sp[2].innerText);
+			}
+			/**
+			 * 根据标签名查找元素
+			 */
+			function getTagByTagName(){
+				var sp = document.getElementsByTagName("span");
+				alert(sp[0].innerText);
+			}
+		</script>
+	</head>
+	<body>
+		<span id="1" name="sp">span1</span><br/>
+		<span id="2" name="sp">span2</span><br />
+		<span id="3" name="sp">span3</span><br />
+		
+		<input type="button" value="查找标签1" onclick="getTagByTagName()" />
+		<input type="button" value="查找标签2" onclick="getTag()" />
+		<input type="button" value="查找标签3" onclick="getTagByName()" />
+	</body>
+</html>
